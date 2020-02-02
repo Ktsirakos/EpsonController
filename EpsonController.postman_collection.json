@@ -1,0 +1,103 @@
+{
+	"variables": [],
+	"info": {
+		"name": "EpsonController",
+		"_postman_id": "fb221b5a-fc05-72ec-7221-889ecafa4acd",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Projector individual action",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "EPSONWEB",
+						"password": "admin",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "http://localhost:3000/projector",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic RVBTT05XRUI6YWRtaW4=",
+						"description": ""
+					},
+					{
+						"key": "Referer",
+						"value": "http://139.91.96.201/cgi-bin/webconf",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"projector\" : \"Left1\",\n\t\"action\" : \"search_input\"\n}"
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "All projectors action",
+			"request": {
+				"url": "http://localhost:3000/all",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic RVBTT05XRUI6YWRtaW4="
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"action\" : \"volume_down\"\n}"
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Instructions Request",
+			"request": {
+				"url": "http://localhost:3000/instructions",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"instructions\" :  [\n    { \"projector\" : \"Left1\" , \"action\" : \"volume_up\" },\n    { \"projector\" : \"Left2\" , \"action\" : \"volume_up\" },\n    { \"projector\" : \"Middle1\" , \"action\" : \"volume_up\" },\n    { \"projector\" : \"Middle2\" , \"action\" : \"volume_up\" },\n    { \"projector\" : \"Right2\" , \"action\" : \"volume_up\" },\n    { \"projector\" : \"Right1\" , \"action\" : \"volume_up\" }\n  ]\n}"
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/projectorDataAll",
+			"request": {
+				"url": "http://localhost:3000/projectorDataAll",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
